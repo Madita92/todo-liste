@@ -1,0 +1,14 @@
+{
+  "name": "Todo Liste",
+  "version": "1.0.0",
+  "description": "Interaktive Todo Liste zum Hinzufügen, abhaken und Löschen von ToDos.",
+  "scripts": {},
+  "author": "Madita Kirschbaum",
+  "license": "MIT",
+  "repository": {},
+  "private": true,
+  "dependencies": {
+    "jquery": "^3.6.1",
+    "rfs": "^9.0.6"
+  }
+}

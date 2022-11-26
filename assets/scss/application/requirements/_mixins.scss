@@ -1,0 +1,59 @@
+// Sass Mixin
+
+@mixin respond-to($media) {
+    // Extra small devices (portrait phones, less than 576px)
+    @if $media == xs {
+        @media (max-width: 575px) { @content; }
+    }
+    // Small devices (landscape phones, 576px and up)
+    @else if $media == sm{
+        @media (min-width: 576px) and (max-width: 767px) {@content; }
+    }
+    // Medium devices (portrait tablets, 768px and up)
+    @else if $media == md {
+        @media (min-width: 768px) and (max-width: 1023px) {@content; }
+    }
+    // Large devices (landscape tablet, 1024px and up)
+    @else if $media == lg {
+        @media (min-width: 1024px) and (max-width: 1365px) { @content; }
+    }
+    // xlarge (laptop, 1366px and up)
+    @else if $media == xl {
+        @media (min-width: 1366px) and (max-width: 1679px) { @content; }
+    }
+    // xxlarge (desktops, 1680px and up)
+    @else if $media == xxl {
+        @media (min-width: 1680px) { @content; }
+    }
+    // Specific max width
+    @else {
+        @media only screen and (max-width: #{$media}px) { @content; }
+    }
+}
+
+@mixin respondto($media...) {
+    @each $mediatype in $media {
+        @include respond-to($mediatype) {@content}
+    }
+}
+
+@mixin transform($transforms) {
+    -webkit-transform: $transforms;
+    -moz-transform: $transforms;
+    -ms-transform: $transforms;
+    transform: $transforms;
+}
+
+@mixin appearance ($value) {
+    -webkit-appearance: $value;
+       -moz-appearance: $value;
+            appearance: $value;
+}
+
+
+@mixin transition($transition...) {
+    -moz-transition:    $transition;
+    -o-transition:      $transition;
+    -webkit-transition: $transition;
+    transition:         $transition;
+}
